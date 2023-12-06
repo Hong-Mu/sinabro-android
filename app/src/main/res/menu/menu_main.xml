@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/libraryFragment"
+        android:icon="@drawable/ic_books"
+        android:title="서재" />
+
+    <item
+        android:id="@+id/exploreFragment"
+        android:icon="@drawable/ic_explore"
+        android:title="탐색" />
+
+    <item
+        android:id="@+id/myPageFragment"
+        android:icon="@drawable/ic_person"
+        android:title="나" />
+</menu>
