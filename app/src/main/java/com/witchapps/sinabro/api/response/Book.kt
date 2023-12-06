@@ -1,5 +1,9 @@
 package com.witchapps.sinabro.api.response
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Book(
     val adult: Boolean,
     val author: String,
@@ -23,4 +27,4 @@ data class Book(
     val seriesInfo: SeriesInfo?,
     val stockStatus: String,
     val title: String,
-)
+): Parcelable

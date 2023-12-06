@@ -3,13 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/nav_home">
 
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.witchapps.sinabro.ui.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+    <navigation
+        android:id="@+id/nav_home"
+        app:startDestination="@id/homeFragment">
+
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.witchapps.sinabro.ui.home.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home">
+
+            <action
+                android:id="@+id/action_homeFragment_to_detailFragment"
+                app:destination="@id/detailFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/detailFragment"
+            android:name="com.witchapps.sinabro.ui.home.DetailFragment"
+            android:label="fragment_detail"
+            tools:layout="@layout/fragment_detail">
+            <argument
+                android:name="book"
+                app:argType="com.witchapps.sinabro.api.response.Book"
+                app:nullable="true" />
+            <action
+                android:id="@+id/action_detailFragment_self"
+                app:destination="@id/detailFragment" />
+            <argument
+                android:name="itemId"
+                app:argType="string"
+                app:nullable="true" />
+        </fragment>
+    </navigation>
+
+
     <fragment
         android:id="@+id/libraryFragment"
         android:name="com.witchapps.sinabro.ui.library.LibraryFragment"

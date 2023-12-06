@@ -1,6 +1,6 @@
 package com.witchapps.sinabro.api.response
 
-data class ApiResponse(
+data class AladinResult(
     val item: List<Book>?,
     val itemsPerPage: Int?,
     val searchCategoryId: Int?,

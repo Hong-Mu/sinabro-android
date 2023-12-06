@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.witchapps.sinabro.R
+import com.witchapps.sinabro.api.response.Book
 import com.witchapps.sinabro.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -28,7 +31,8 @@ class HomeFragment : Fragment() {
         binding.recyclerView.adapter = adapter
 
         adapter.setOnItemClickListener { item, position ->
-            
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(item as Book, null)
+            findNavController().navigate(action)
         }
 
         viewModel.bookList.observe(viewLifecycleOwner) {

@@ -6,6 +6,7 @@ plugins {
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -59,13 +60,13 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // Core
-    implementation("androidx.core:core-ktx:1.12.0")
-
     // Appcompat
     implementation("androidx.appcompat:appcompat:1.6.1")
 
-    // Material
+    // Core
+    implementation("androidx.core:core-ktx:1.12.0")
+
+    // Material3
     implementation("com.google.android.material:material:1.10.0")
 
     // ConstraintLayout
@@ -103,4 +104,7 @@ dependencies {
 
     // Timber
     implementation ("com.jakewharton.timber:timber:5.0.1")
+
+    // Jsoup
+    implementation("org.jsoup:jsoup:1.17.1")
 }

@@ -26,9 +26,7 @@ class HomeViewModel @Inject constructor(
             val result = aladinRepository.getList("Bestseller", 1, 50)
             if(result.isSuccessful) {
                 val list = result.body()?.item?: listOf()
-                list.forEach {
-                    it.cover = it.cover.replace("coversum", "cover500")
-                }
+                // list.forEach { it.cover = it.cover.replace("coversum", "cover") }
                 bookList.postValue(list)
             }
         } catch (e: Exception) {

@@ -1,7 +1,7 @@
 package com.witchapps.sinabro.api
 
 import com.witchapps.sinabro.BuildConfig
-import com.witchapps.sinabro.api.response.ApiResponse
+import com.witchapps.sinabro.api.response.AladinResult
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -16,7 +16,8 @@ interface ApiService {
         @Query("SearchTarget") searchTarget: String = "Book",
         @Query("Output") output: String = "js",
         @Query("Version") version: String = "20131101",
-    ): Response<ApiResponse>
+        @Query("Cover") coverSize: String = "Big",
+    ): Response<AladinResult>
 
     @GET("ItemLookUp.aspx")
     suspend fun getByItemId(
@@ -25,7 +26,8 @@ interface ApiService {
         @Query("TTBKey") ttbkey: String = BuildConfig.ALADIN_API_TTB_KEY,
         @Query("Output") output: String = "js",
         @Query("Version") version: String = "20131101",
-    ): Response<ApiResponse>
+        @Query("Cover") coverSize: String = "Big",
+    ): Response<AladinResult>
 
     @GET("ItemSearch.aspx")
     suspend fun search(
@@ -37,5 +39,6 @@ interface ApiService {
         @Query("SearchTarget") target: String = "Book",
         @Query("Output") output: String = "js",
         @Query("Version") version: String = "20131101",
-    ): Response<ApiResponse>
+        @Query("Cover") coverSize: String = "Big",
+    ): Response<AladinResult>
 }
