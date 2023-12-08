@@ -25,8 +25,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initRecyclerView()
-    }
 
+        // Search Button
+        binding.btnSearch.setOnClickListener {
+            viewModel.search("aladin")
+        }
+    }
     private fun initRecyclerView() {
         binding.recyclerView.adapter = adapter
 

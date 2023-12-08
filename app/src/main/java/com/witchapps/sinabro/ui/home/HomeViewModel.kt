@@ -33,4 +33,16 @@ class HomeViewModel @Inject constructor(
             e.printStackTrace()
         }
     }
+
+    fun search(keyword: String) = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            val result = aladinRepository.searchBook(keyword)
+            if(result.isSuccessful) {
+                val list = result.body()?.item?: listOf()
+                bookList.postValue(list)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 }
