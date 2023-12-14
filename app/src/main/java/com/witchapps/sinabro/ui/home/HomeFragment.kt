@@ -24,7 +24,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initSpinner()
         initRecyclerView()
+    }
+
+    private fun initSpinner() {
+        binding.spinnerSort.setOnSpinnerItemSelectedListener<String> { oldIndex, oldItem, newIndex, newItem ->
+            viewModel.selectedSortIndex = newIndex
+            when(newIndex) {
+                0 -> adapter.clearFilter()
+                1 -> adapter.sortByTitle()
+                2 -> adapter.sortByPubDate()
+            }
+        }
     }
 
     private fun initRecyclerView() {
@@ -36,8 +48,14 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.bookList.observe(viewLifecycleOwner) {
-            adapter.list = it
+            adapter.originalList = it
+            binding.spinnerSort.selectItemByIndex(viewModel.selectedSortIndex)
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        binding.spinnerSort.dismiss()
     }
 
     override fun onCreateView(

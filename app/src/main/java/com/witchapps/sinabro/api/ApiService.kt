@@ -17,6 +17,7 @@ interface ApiService {
         @Query("Output") output: String = "js",
         @Query("Version") version: String = "20131101",
         @Query("Cover") coverSize: String = "Big",
+        @Query("Sort") sortType: String = "Accuracy",
     ): Response<AladinResult>
 
     @GET("ItemLookUp.aspx")

@@ -16,14 +16,16 @@ class HomeViewModel @Inject constructor(
     private val aladinRepository: AladinRepository
 ) : ViewModel() {
 
+    var selectedSortIndex = 0
+
     init {
         getList()
     }
 
     val bookList = MutableLiveData<List<Book>>()
-    fun getList() = viewModelScope.launch(Dispatchers.IO) {
+    fun getList(sortType: String = "Accuracy") = viewModelScope.launch(Dispatchers.IO) {
         try {
-            val result = aladinRepository.getList("Bestseller", 1, 50)
+            val result = aladinRepository.getList("Bestseller", 1, 100, sortType)
             if(result.isSuccessful) {
                 val list = result.body()?.item?: listOf()
                 // list.forEach { it.cover = it.cover.replace("coversum", "cover") }

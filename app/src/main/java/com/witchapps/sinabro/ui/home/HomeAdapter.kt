@@ -14,11 +14,30 @@ import javax.inject.Inject
 class HomeAdapter @Inject constructor(
 
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+
+    var originalList = listOf<Book>()
+        set(value) {
+            field = value
+            list = value
+        }
+
     var list: List<Book> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
+
+    fun clearFilter() {
+        list = originalList
+    }
+
+    fun sortByTitle() {
+        list = originalList.sortedBy { it.title }
+    }
+
+    fun sortByPubDate() {
+        list = originalList.sortedBy { it.pubDate }
+    }
 
     inner class ViewHolder(private val binding: ItemBookBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {

@@ -54,7 +54,6 @@ android {
 }
 
 dependencies {
-
     // Test
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -107,4 +106,10 @@ dependencies {
 
     // Jsoup
     implementation("org.jsoup:jsoup:1.17.1")
+
+    // Power Spinner
+    implementation("com.github.skydoves:powerspinner:1.2.7")
+
+    // Google Auth
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }
