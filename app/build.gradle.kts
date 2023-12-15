@@ -112,4 +112,10 @@ dependencies {
 
     // Google Auth
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    // Lottie
+    implementation("com.airbnb.android:lottie:6.2.0")
+
+    // Custom Tab
+    implementation("androidx.browser:browser:1.7.0")
 }

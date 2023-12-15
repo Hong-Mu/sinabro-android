@@ -35,7 +35,7 @@ interface ApiService {
         @Query("Query") keyword: String,
         @Query("TTBKey") ttbkey: String = BuildConfig.ALADIN_API_TTB_KEY,
         @Query("QueryType") queryType: String = "Keyword",
-        @Query("MaxResults") maxResults: Int = 10,
+        @Query("MaxResults") maxResults: Int = 30,
         @Query("Start") startPage: Int = 1,
         @Query("SearchTarget") target: String = "Book",
         @Query("Output") output: String = "js",

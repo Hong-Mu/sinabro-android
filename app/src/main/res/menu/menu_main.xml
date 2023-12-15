@@ -6,15 +6,12 @@
         android:title="홈" />
 
     <item
-        android:id="@+id/libraryFragment"
+        android:id="@+id/nav_library"
         android:icon="@drawable/ic_books"
         android:title="서재" />
 
     <item
-        android:title="" />
-
-    <item
-        android:id="@+id/exploreFragment"
+        android:id="@+id/nav_explore"
         android:icon="@drawable/ic_explore"
         android:title="탐색" />
 
