@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "709793659213",
+    "project_id": "sinabro-3b49e",
+    "storage_bucket": "sinabro-3b49e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709793659213:android:816cb451cc3b627da91f04",
+        "android_client_info": {
+          "package_name": "com.witchapps.sinabro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709793659213-pshbla3su6a46cs9e3rdlur179gjfi1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUzZni6VgPmhVvfSdorNCt66ihHjKNOos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709793659213-pshbla3su6a46cs9e3rdlur179gjfi1e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

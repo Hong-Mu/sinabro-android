@@ -127,6 +127,12 @@ class MyPageFragment : Fragment() {
                 .addOnSuccessListener {
                     // 로그인 성공
                     updateFirebase(it.user!!)
+                    binding.textName.text = it.user!!.displayName
+
+                    Glide.with(binding.root)
+                        .load(it.user!!.photoUrl)
+                        .circleCrop()
+                        .into(binding.imageProfile)
                 }.addOnFailureListener {
                     Snackbar.make(binding.root, it.localizedMessage, Snackbar.LENGTH_SHORT).show()
                 }
